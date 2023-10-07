@@ -10,41 +10,45 @@ AppMO is a Django-based web application that allows users to query information t
 
 1. Clone this repository on your local machine:
 
-git clone https://github.com/yourusername/appMO.git
 
+   git clone https://github.com/camiloquinteror92/appMO.git
 
 
 2. Navigate to the project directory:
 
 
+   cd appMO
+
+
 3. Create and activate a virtual environment (optional but recommended):
 
-python -m venv myenv
-source myenv/bin/activate # On Windows, use 'myenv\Scripts\activate'
-
+   python -m venv myenv
+   source myenv/bin/activate # On Windows, use 'myenv\Scripts\activate'
 
 
 4. Install project dependencies:
 
-pip install -r requirements.txt
+
+   pip install -r requirements.txt
 
 
 5. Create a copy of the example configuration file:
 
-cp .env.example .env
+
+   cp .env.example .env
 
 
 6. Open the `.env` file in a text editor and configure the necessary environment variables, such as database settings and secret keys.
 
 7. Apply database migrations:
 
-python manage.py migrate
-
+   python manage.py migrate
 
 
 8. Create a superuser account to access the admin panel (optional):
 
-python manage.py createsuperuser
+
+   python manage.py createsuperuser
 
 
 ## Execution
@@ -55,8 +59,8 @@ You can run the application locally or within a Docker container.
 
 To run the application locally, use the following command:
 
-python manage.py runserver
 
+python manage.py runserver
 
 The application will be available at [http://localhost:8000/](http://localhost:8000/).
 
@@ -64,10 +68,9 @@ The application will be available at [http://localhost:8000/](http://localhost:8
 
 If you prefer to run the application in a Docker container, ensure you have Docker installed on your machine. Then, run the following command:
 
+
 docker-compose up -d
 
-markdown
-Copy code
 
 The application will be available at [http://localhost:8000/](http://localhost:8000/).
 
@@ -93,3 +96,5 @@ If you wish to contribute to this project, follow these steps:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
