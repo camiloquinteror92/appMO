@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web:
+    image: django-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - DJANGO_DB_HOST=db
+      - DJANGO_DB_PORT=5432
+      - DJANGO_DB_NAME=mydatabase
+      - DJANGO_DB_USER=myuser
+      - DJANGO_DB_PASSWORD=mypassword
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword

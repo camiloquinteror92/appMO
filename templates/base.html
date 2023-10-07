@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'appMO/style.css' %}">
+    <!-- Add any other head elements here, like CSS links -->
+</head>
+<body>
+    <nav>
+        <a href="{% url 'dashboard_view' %}">Dashboard</a>
+        <!-- Other links can be added here as required -->
+    </nav>
+    
+    <header>
+        <!-- This is a placeholder for a site header. You can add navigation links, logo, etc. -->
+        <h1>MO Technologies Dashboard</h1>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- Content of individual pages will be inserted here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- This is a placeholder for a site footer. You can add copyright text, footer links, etc. -->
+        <p>&copy; 2023 MO Technologies</p>
+    </footer>
+</body>
+</html>

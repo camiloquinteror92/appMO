@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Dashboard</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Customers</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ total_customers }}</h5>
+                    <p class="card-text">Total registered customers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Loans</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ total_loans }}</h5>
+                    <p class="card-text">Total loans granted</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-header">Payments</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ total_payments }}</h5>
+                    <p class="card-text">Total payments received</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">${{ total_balance }}</h5>
+                    <p class="card-text">Total outstanding balance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h4>Top customers</h4>
+            <ul class="list-group">
+                {% for customer in top_customers %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{% url 'customer-loans-list' customer.id %}">{{ customer.first_name }} {{ customer.last_name }}</a>
+                    <span class="badge badge-primary badge-pill">${{ customer.total_debt }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Recent loans</h4>
+            <ul class="list-group">
+                {% for loan in recent_loans %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{% url 'loan-payments-list' loan.id %}">{{ loan.external_id }} - {{ loan.customer.first_name }} {{ loan.customer.last_name }}</a>
+                    <span class="badge badge-primary badge-pill">${{ loan.amount }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
