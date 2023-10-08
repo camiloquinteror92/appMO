@@ -1,100 +1,90 @@
+
 # AppMO
 
-AppMO is a Django-based web application that allows users to query information through an API and request an API key for authentication.
+AppMO es una aplicación web basada en Django que permite a los usuarios consultar información a través de una API y solicitar una clave de API para autenticarse.
 
-## Prerequisites
-- Python 3.8 or higher
-- Docker (if you want to run the application in a container)
+## Requisitos previos
+- Python 3.8 o superior
+- Docker (si deseas ejecutar la aplicación en un contenedor)
 
-## Installation and Configuration
+## Instalación y configuración
 
-1. Clone this repository on your local machine:
+1. Clona este repositorio en tu máquina local:
 
+   ```bash
+   git clone https://github.com/tuusuario/appMO.git
+   ```
 
-   git clone https://github.com/camiloquinteror92/appMO.git
+2. Entra al directorio del proyecto:
 
-
-2. Navigate to the project directory:
-
-
+   ```bash
    cd appMO
+   ```
 
+3. Crea y activa un entorno virtual (opcional pero recomendado):
 
-3. Create and activate a virtual environment (optional but recommended):
-
+   ```bash
    python -m venv myenv
-   source myenv/bin/activate # On Windows, use 'myenv\Scripts\activate'
+   source myenv/bin/activate  # En Windows, usa 'myenv\Scripts\activate'
+   ```
 
+4. Instala las dependencias del proyecto:
 
-4. Install project dependencies:
-
-
+   ```bash
    pip install -r requirements.txt
+   ```
 
+5. Crea una copia del archivo de configuración de ejemplo:
 
-5. Create a copy of the example configuration file:
-
-
+   ```bash
    cp .env.example .env
+   ```
 
+6. Abre el archivo `.env` en un editor de texto y configura las variables de entorno necesarias, como la configuración de la base de datos y las claves secretas.
 
-6. Open the `.env` file in a text editor and configure the necessary environment variables, such as database settings and secret keys.
+7. Aplica las migraciones de la base de datos:
 
-7. Apply database migrations:
-
+   ```bash
    python manage.py migrate
+   ```
 
+8. Crea un superusuario para acceder al panel de administración (opcional):
 
-8. Create a superuser account to access the admin panel (optional):
-
-
+   ```bash
    python manage.py createsuperuser
+   ```
 
+## Ejecución
 
-## Execution
+Puedes ejecutar la aplicación de forma local o dentro de un contenedor Docker.
 
-You can run the application locally or within a Docker container.
+### Ejecución local
 
-### Local Execution
+Para ejecutar la aplicación localmente, usa el siguiente comando:
 
-To run the application locally, use the following command:
-
-
+```bash
 python manage.py runserver
+```
 
-The application will be available at [http://localhost:8000/](http://localhost:8000/).
+La aplicación estará disponible en [http://localhost:8000/](http://localhost:8000/).
 
-### Docker Execution
+### Ejecución con Docker
 
-If you prefer to run the application in a Docker container, ensure you have Docker installed on your machine. Then, run the following command:
+Si prefieres ejecutar la aplicación en un contenedor Docker, asegúrate de tener Docker instalado en tu máquina. Luego, ejecuta el siguiente comando:
 
-
+```bash
 docker-compose up -d
+```
 
+La aplicación estará disponible en [http://localhost:8000/](http://localhost:8000/).
 
-The application will be available at [http://localhost:8000/](http://localhost:8000/).
+## Uso
 
-## Usage
+- Accede al panel de administración en [http://localhost:8000/admin/](http://localhost:8000/admin/) (o la URL correspondiente) con las credenciales del superusuario que creaste.
 
-- Access the admin panel at [http://localhost:8000/admin/](http://localhost:8000/admin/) (or the corresponding URL) using the credentials of the superuser you created.
+- Los usuarios pueden registrarse en la aplicación y solicitar una clave de API para autenticarse y acceder a la API.
 
-- Users can register in the application and request an API key for authentication to access the API.
+- Consulta la documentación de la API en [http://localhost:8000/api/docs/](http://localhost:8000/api/docs/) para conocer los endpoints disponibles y cómo usarlos.
 
-- Check the API documentation at [http://localhost:8000/api/docs/](http://localhost:8000/api/docs/) to learn about available endpoints and how to use them.
-
-## Contribution
-
-If you wish to contribute to this project, follow these steps:
-
-1. Create a fork of the repository.
-2. Clone your fork to your local machine.
-3. Create a branch for your feature or bug fix: `git checkout -b my-feature`.
-4. Make your changes and commit them.
-5. Push your changes to your fork on GitHub: `git push origin my-feature`.
-6. Create a Pull Request in the main repository.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 

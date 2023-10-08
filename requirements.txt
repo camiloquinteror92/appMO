@@ -6,3 +6,4 @@ pytz==2023.3.post1
 sqlparse==0.4.4
 tzdata==2023.3
 psycopg2==2.9.1
+drf-yasg  # Si decides agregar la documentación de Swagger
