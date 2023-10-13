@@ -26,7 +26,7 @@ Sigue estos pasos para instalar y configurar AppMO en tu sistema:
 
 1. Clona este repositorio en tu máquina local:
 ```
-git clone https://github.com/tuusuario/appMO.git
+git clone https://github.com/camiloquinteror92/appMO.git
 cd appMO
 ```
 2. Crea una copia del archivo de configuración de ejemplo:
